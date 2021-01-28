@@ -1,0 +1,20 @@
+var myarray = [];
+undefined
+
+myarray[0] = "zero";
+"zero"
+
+myarray[1] = true;
+true
+
+myarray[2] = 4;
+4
+
+myarray;
+(3) ["zero", true, 4]
+
+myarray[10] = "Ten";
+"Ten"
+
+myarray;
+(11) ["zero", true, 4, empty × 7, "Ten"]

@@ -1,0 +1,48 @@
+ <!-- 'setTimeout' function
+
+ Syntax:
+ setTimeout(callback_function,delay_milliseconds) -->
+
+
+
+
+
+ <!-- 
+
+setTimeout(function() { console.log("should print after 2 seconds"); },2000)
+1
+VM169:1 should print after 2 seconds
+
+setTimeout(function() { console.log("should print after 7 seconds"); },7000)
+2
+VM203:1 should print after 7 seconds
+
+clearTimeout(2)
+
+
+-->
+
+<html>
+    <head>
+        <title>Slideshow</title>
+        <script>
+            var pictures = ["http://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Megachile_incerta_male_1.jpg/1024px-megachile_incerta_male_1.jpg"]
+            function load(){
+            //    document.getElementById("image_canvas").getElementsByTagName("img")[0].src = pictures[0]
+                changePic(0);
+            }
+            function changePic(n) {
+                document.getElementById("image_canvas").getElementsByTagName("img")[0].src = pictures[n % pictures.length];
+                setTimeout( function() { changePic(n+1);}, 5000);
+            }
+        </script>
+    </head>
+    <body onload="load();">
+        <h1 id="myHeader">
+            My Pictures
+        </h1>
+        <div id="image_canvas" style="width: 750px;height: 497px;margin: 0 auto;">
+            <img style="height: 100%;width: 100%;"/>
+        </div>
+    </body>
+</html>
